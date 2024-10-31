@@ -1,7 +1,10 @@
+// app/contact/page.tsx
+
 import { styled } from 'styled-components';
-import { ContactForm } from './contactForm';
+import Head from 'next/head';
 import { Header } from '../components/header';
 import { Footer } from '../components/footer';
+import { ContactForm } from './contactForm';
 
 const PageContainer = styled.div`
   display: flex;
@@ -17,12 +20,25 @@ const PageContainer = styled.div`
   }
 `;
 
-export function ContactFormPage() {
+export default function ContactFormPage() {
   return (
-    <PageContainer>
-      <Header />
-      <ContactForm />
-      <Footer />
-    </PageContainer>
+    <>
+      <Head>
+        <title>Контактная форма</title>
+        <meta
+          name="description"
+          content="Свяжитесь с нами через контактную форму для получения дополнительной информации."
+        />
+        <meta
+          name="keywords"
+          content="контактная форма, связь, контакт, ваш сайт"
+        />
+      </Head>
+      <PageContainer>
+        <Header />
+        <ContactForm />
+        <Footer />
+      </PageContainer>
+    </>
   );
 }
