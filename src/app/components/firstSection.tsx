@@ -1,7 +1,8 @@
-import { styled } from 'styled-components';
-import { MainTitle } from '../../Titles';
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+// app/components/FirstSection.tsx
 
+import { styled } from 'styled-components';
+import { MainTitle } from './titles';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 const pxToRem = (px: number): string => `${px / 16}rem`;
@@ -63,22 +64,24 @@ const VideoContainer = styled.div`
 
 export function FirstSection() {
   return (
-    <FirstSectionContainer>
-      <DescriptionBlock>
-        <MainTitle text="Most important title on the page"></MainTitle>
-        <TextContainer>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-          mattis, leo et condimentum ultricies, sem urna convallis metus, vel
-          suscipit nibh lacus tincidunt ante
-        </TextContainer>
-      </DescriptionBlock>
-      <VideoContainer>
-        <LiteYouTubeEmbed
-          id="dQw4w9WgXcQ"
-          title="YouTube video player"
-          poster="maxresdefault"
-        />
-      </VideoContainer>
-    </FirstSectionContainer>
+    <>
+      <FirstSectionContainer>
+        <DescriptionBlock>
+          <MainTitle text="Most important title on the page" />
+          <TextContainer>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+            mattis, leo et condimentum ultricies, sem urna convallis metus, vel
+            suscipit nibh lacus tincidunt ante
+          </TextContainer>
+        </DescriptionBlock>
+        <VideoContainer>
+          <LiteYouTubeEmbed
+            id="dQw4w9WgXcQ"
+            title="YouTube video player"
+            poster="maxresdefault"
+          />
+        </VideoContainer>
+      </FirstSectionContainer>
+    </>
   );
 }

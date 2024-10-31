@@ -1,8 +1,8 @@
 // import Image from 'next/image';
 // import styles from './page.module.css';
 import styled from 'styled-components';
-import { Header } from './header';
-import { Footer } from './footer';
+import { Header } from './components/header';
+import { Footer } from './components/footer';
 
 const PageContainer = styled.div`
   display: flex;
