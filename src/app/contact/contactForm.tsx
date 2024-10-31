@@ -1,6 +1,6 @@
 import { Button, InputLabel, TextField } from '@mui/material';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { styled } from 'styled-components';
 
 const pxToRem = (px: number): string => `${px / 16}rem`;
@@ -118,17 +118,6 @@ export function ContactForm() {
   });
   const [responseMessage, setResponseMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
-  // const [success, setSuccess] = useState(false);
-  // const [error, setError] = useState<string | null>(null);
-
-  // useEffect(() => {
-  //   const message = localStorage.getItem(responseMessage);
-  //   if (message) {
-  //     setResponseMessage(message);
-  //     localStorage.removeItem('responseMessage');
-  //     console.log('ContactPage загружен');
-  //   }
-  // }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -138,21 +127,11 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        '/api/contact',
-        formData,
-        // const response = await axios.post(
-        //   'http://localhost:5173/contact/api/contact',
-        //   formData,
-        {
-          headers: { 'Content-Type': 'application/json' },
-        }
-      );
+      const response = await axios.post('/api/contact', formData, {
+        headers: { 'Content-Type': 'application/json' },
+      });
       if (response.status === 200) {
-        // navigate('/contact/confirmation');
-        // localStorage.setItem('responseMessage', response.data.message);
-        // window.location.reload();
-        setResponseMessage(`Спасибо за проявленный интерес, ${formData.name}`);
+        setResponseMessage(`Thank you for your interest, ${formData.name}`);
         setIsSubmitted(true);
       }
     } catch (error) {

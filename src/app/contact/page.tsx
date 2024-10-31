@@ -1,4 +1,4 @@
-// app/contact/page.tsx
+'use client';
 
 import { styled } from 'styled-components';
 import Head from 'next/head';

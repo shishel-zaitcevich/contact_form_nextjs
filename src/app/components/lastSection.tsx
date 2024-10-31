@@ -10,6 +10,7 @@ const LastSectionContainer = styled.section`
   max-width: 1280px;
   width: 100%;
   min-height: 150px;
+  height: 100%;
   font-size: 32px;
   background-color: #f5f5f5;
   padding: 40px;

@@ -1,5 +1,4 @@
-// import Image from 'next/image';
-// import styles from './page.module.css';
+'use client';
 import styled from 'styled-components';
 import { Header } from './components/header';
 import { Footer } from './components/footer';
@@ -19,7 +18,7 @@ const PageContainer = styled.div`
   }
 `;
 
-export function HomePage() {
+export default function HomePage() {
   return (
     <PageContainer>
       <Header />
