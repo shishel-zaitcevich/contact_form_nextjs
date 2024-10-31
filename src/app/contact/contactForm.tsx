@@ -2,6 +2,7 @@ import { Button, InputLabel, TextField } from '@mui/material';
 import axios from 'axios';
 import { useState } from 'react';
 import { styled } from 'styled-components';
+import { ResponseTitle } from '../components/titles';
 
 const pxToRem = (px: number): string => `${px / 16}rem`;
 
@@ -144,7 +145,7 @@ export function ContactForm() {
   return (
     <FormContainer>
       {isSubmitted ? (
-        <FormTitle>{responseMessage}</FormTitle>
+        <ResponseTitle text={responseMessage}></ResponseTitle>
       ) : (
         <>
           <FormTitle>Only CTA on the page</FormTitle>

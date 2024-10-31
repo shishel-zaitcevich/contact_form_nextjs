@@ -31,3 +31,17 @@ const TitleContainer = styled.h3`
 export function Title({ text }: MainTitleProps) {
   return <TitleContainer>{text} </TitleContainer>;
 }
+const ResponseTitleContainer = styled.h1`
+  font-size: ${pxToRem(48)};
+  margin: 0;
+  margin-bottom: ${pxToRem(40)};
+  max-width: ${pxToRem(600)};
+  @media (max-width: 768px) {
+    margin-bottom: ${pxToRem(20)};
+    font-size: ${pxToRem(32)};
+  }
+`;
+
+export function ResponseTitle({ text }: MainTitleProps) {
+  return <ResponseTitleContainer>{text} </ResponseTitleContainer>;
+}
