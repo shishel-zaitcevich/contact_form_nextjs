@@ -1,5 +1,3 @@
-// app/components/ContactButton.tsx
-
 import Link from 'next/link';
 import { Button } from '@mui/material';
 import styled from 'styled-components';
@@ -31,8 +29,11 @@ const StyledButton = styled(Button)`
 `;
 
 export function ContactButton() {
+  const handleClick = () => {
+    console.log('Button clicked, navigating to /contact');
+  };
   return (
-    <StyledLink href="/contact">
+    <StyledLink href="/contact" onClick={handleClick}>
       <StyledButton>Contact us</StyledButton>
     </StyledLink>
   );

@@ -1,5 +1,3 @@
-// app/components/FirstSection.tsx
-
 import { styled } from 'styled-components';
 import { MainTitle } from './titles';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
@@ -13,7 +11,7 @@ const FirstSectionContainer = styled.section`
   justify-content: space-between;
   max-width: ${pxToRem(1280)};
   width: 100%;
-  min-height: ${pxToRem(351)};
+  // min-height: ${pxToRem(400)};
   height: 100%;
   font-size: ${pxToRem(32)};
   background-color: #f5f5f5;
@@ -28,8 +26,10 @@ const FirstSectionContainer = styled.section`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-size: ${pxToRem(18)};
     padding: ${pxToRem(10)};
+    padding-bottom: ${pxToRem(40)};
   }
 `;
 
