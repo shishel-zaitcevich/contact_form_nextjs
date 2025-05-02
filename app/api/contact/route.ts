@@ -1,5 +1,3 @@
-// src/app/api/submit-form/route.js
-
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
@@ -13,13 +11,10 @@ export async function POST(request: NextRequest) {
   try {
     const { name, email, message } = await request.json();
 
-    // Валидация данных с использованием Zod
     formSchema.parse({ name, email, message });
 
-    // Формирование строки с данными
     const responseString = `Имя: ${name}, Email: ${email}, Сообщение: ${message}`;
 
-    // Возврат строки клиенту
     return NextResponse.json({ message: responseString }, { status: 200 });
   } catch (error) {
     if (error instanceof z.ZodError) {

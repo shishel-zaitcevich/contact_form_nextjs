@@ -11,7 +11,6 @@ const FirstSectionContainer = styled.section`
   justify-content: space-between;
   max-width: ${pxToRem(1280)};
   width: 100%;
-  // min-height: ${pxToRem(400)};
   height: 100%;
   font-size: ${pxToRem(32)};
   background-color: #f5f5f5;
